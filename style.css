@@ -1,0 +1,321 @@
+/* ======================================================= */
+/* ESTILOS GERAIS E VARIÁVEIS                              */
+/* ======================================================= */
+
+/* :root é usado para definir variáveis CSS globais */
+:root {
+    --cor-principal: #c72a2a; /* Vermelho Fiat */
+    --cor-texto: #333;
+    --cor-fundo: #f4f4f4;
+    --cor-branco: #fff;
+    --cor-preto: #000;
+    --padding-container: clamp(15px, 4vw, 25px); /* Padding responsivo */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--padding-container);
+}
+
+/* ======================================================= */
+/* COMPONENTES GERAIS                                      */
+/* ======================================================= */
+
+/* --- Cabeçalho / Navbar --- */
+.navbar {
+    background-color: var(--cor-preto);
+    padding-block: 10px; /* Padding vertical */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: clamp(20px, 5vw, 40px); /* Margem responsiva */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: var(--padding-container); /* Padding horizontal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: clamp(80px, 15vw, 100px); /* Tamanho do logo fluido */
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: clamp(15px, 4vw, 30px); /* Espaçamento fluido */
+}
+
+.navbar a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Fonte fluida */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ccc;
+}
+
+/* --- Título principal e Busca --- */
+header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Título fluido */
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.busca-container {
+    text-align: center;
+    margin-bottom: clamp(30px, 6vw, 50px);
+}
+
+.busca-container input {
+    width: 100%;
+    max-width: 600px; /* Limite para não ficar excessivamente largo */
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* --- Vitrine e Cards (USANDO CSS GRID) --- */
+.vitrine {
+    display: grid;
+    /* Mágica do Grid: cria colunas de no mínimo 280px e no máximo 1fr (fração do espaço) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 4vw, 30px); /* Espaçamento fluido */
+}
+
+.carro-card {
+    background-color: var(--cor-branco);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.carro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.carro-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    aspect-ratio: 16 / 10; 
+    object-fit: cover; 
+}
+
+.carro-card h2 {
+    font-size: clamp(1.1rem, 3vw, 1.25rem);
+    margin: 15px 0 5px;
+}
+
+.preco {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    font-weight: bold;
+    color: var(--cor-principal);
+    margin-top: auto; 
+}
+
+
+
+.detalhe-overlay {
+    position: fixed;
+    inset: 0; 
+    background-color: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-container);
+    z-index: 1000;
+}
+
+.detalhe-card {
+    background-color: var(--cor-branco);
+    padding: clamp(30px, 5vw, 45px);
+    padding-top: clamp(45px, 8vw, 60px);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.detalhe-card img {
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+.fechar-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.fechar-btn:hover {
+    background-color: #d1d1d1;
+    transform: rotate(90deg);
+}
+
+.comprar-btn {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: opacity 0.2s;
+}
+
+.comprar-btn:hover {
+    opacity: 0.85;
+}
+
+
+
+
+.footer {
+    
+    color: #555;
+    padding: clamp(40px, 8vw, 60px) var(--padding-container) 20px; 
+    margin-top: clamp(40px, 8vw, 80px);
+    
+    border-top: 1px solid #ddd;
+    
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    flex-basis: 150px;
+    flex-grow: 1;
+}
+
+.footer-logo img {
+    width: 120px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    flex-basis: 700px;
+    flex-grow: 9999;
+}
+
+.link-column {
+    flex-basis: 180px;
+    flex-grow: 1;
+}
+
+.link-column h4 {
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+    color: #333; 
+    font-weight: 600;
+}
+
+.link-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link-column li {
+    margin-bottom: 10px;
+}
+
+.link-column a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.link-column a:hover {
+    color: var(--cor-principal);
+}
+
+.footer-legal {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+    border-top: 1px solid #e0e0e0; 
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-legal p {
+    margin: 5px 0;
+}
+
+.footer-social {
+    text-align: center;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 12px;
+    color: #444;
+}
+
+.footer-social svg {
+    width: 24px;
+    height: 24px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+    color: var(--cor-principal);
+    transform: scale(1.1);
+}
