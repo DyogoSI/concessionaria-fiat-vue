@@ -3,39 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concessionária Fiat Vue</title>
+    <title>Concessionária Fiat | Abarth</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-container">
-        
-        <a href="#" class="navbar-logo">
-            <img src="icons/logo fiat.svg" alt="Logo Fiat">
-        </a>
-        <ul>
-            <li><a href="index.html">VITRINE</a></li>
-            <li><a href="seminovos.html">SEMI NOVOS</a></li>
-            <li><a href="abarth.html">ABARTH</a></li> 
-        </ul>
-    </div>
-</nav>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="icons/logo fiat.svg" alt="Logo Fiat" class="navbar-logo">
+            <ul>
+                <li><a href="index.html">VITRINE</a></li>
+                <li><a href="seminovos.html">SEMI NOVOS</a></li>
+                <li><a href="abarth.html">ABARTH</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div id="app">
-        <header>
-    <div class="main-title-container">
-        <img src="icons/flag-red.webp" alt="Logo Fiat Vermelho" class="title-logo">
-        <h1>Vitrine de carros</h1>
-    </div>
-    </header>
-
         <main>
+            <section class="banner-container-imagem">
+                <img src="https://www.fiat.com.br/content/dam/fiat/fastback-abarth-my26/02_destaque_home_abarth_desk.webp" alt="Banner Abarth com Pulse e Fastback">
+                <a href="#vitrine" class="cta-invisivel" aria-label="Saiba mais sobre os carros Abarth"></a>
+            </section>
+            
             <div class="busca-container">
                 <input type="text" v-model="termoBusca" placeholder="Buscar por nome...">
             </div>
 
-            <section class="vitrine">
+            <section class="vitrine" id="vitrine">
                 <div v-for="carro in carrosFiltrados" :key="carro.id" class="carro-card" @click="selecionarCarro(carro)">
                     <img :src="carro.imagem" :alt="carro.nome">
                     <h2>{{ carro.nome }}</h2>
@@ -107,32 +103,20 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="footer-legal">
-                  <p>&copy; 2025 Dyogo Henrique | WEB DEVELOPER</p>
+                    <p>&copy; 2025 Dyogo Henrique | WEB DEVELOPER</p>
                 </div>
-
                 <div class="footer-social">
-                    <a href="#" aria-label="Twitter">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"></path></svg>
-                    </a>
-                    <a href="#" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 7.306c-.23-.834-.89-1.493-1.724-1.724C18.31 5 12 5 12 5s-6.31 0-7.858.582c-.834.23-1.494.89-1.724 1.724C2 8.854 2 12 2 12s0 3.146.418 4.694c.23.834.89 1.493 1.724 1.724C5.69 19 12 19 12 19s6.31 0 7.858-.582c.834-.23 1.494-.89 1.724-1.724C22 15.146 22 12 22 12s0-3.146-.418-4.694zM9.546 14.552V9.448L14.734 12z"></path></svg>
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2.717 0-3.056.01-4.122.06-1.065.05-1.79.22-2.428.46-.66.25-1.217.59-1.777 1.15-.56.56- .9 1.117-1.15 1.777-.24 1.065-.41 1.79-.46 2.428-.05 1.066-.06 1.405-.06 4.122s.01 3.056.06 4.122c.05 1.065.22 1.79.46 2.428.25.66.59 1.217 1.15 1.777.56.56 1.117.9 1.777 1.15.638.24 1.363.41 2.428.46 1.066.05 1.405.06 4.122.06s3.056-.01 4.122-.06c1.065-.05 1.79-.22 2.428-.46.66-.25 1.217-.59 1.777-1.15.56-.56.9-1.117 1.15-1.777.24-1.065.41-1.79.46-2.428.05-1.066.06-1.405.06-4.122s-.01-3.056-.06-4.122c-.05-1.065-.22-1.79-.46-2.428a5.525 5.525 0 0 0-1.15-1.777 5.525 5.525 0 0 0-1.777-1.15c-.638-.24-1.363-.41-2.428-.46C15.056 2.01 14.717 2 12 2zm0 1.8c2.67 0 2.987.01 4.042.06 1.03.05 1.62.22 2.075.4.52.22 1.05.57 1.48 1.01.43.43.79.96 1.01 1.48.18.455.35 1.045.4 2.075.05 1.055.06 1.372.06 4.042s-.01 2.987-.06 4.042c-.05 1.03-.22 1.62-.4 2.075a3.633 3.633 0 0 1-1.01 1.48 3.633 3.633 0 0 1-1.48 1.01c-.455.18-1.045.35-2.075.4-1.055.05-1.372.06-4.042.06s-2.987-.01-4.042-.06c-1.03-.05-1.62-.22-2.075-.4a3.633 3.633 0 0 1-1.48-1.01 3.633 3.633 0 0 1-1.01-1.48c-.18-.455-.35-1.045-.4-2.075C3.01 15.057 3 14.74 3 12s.01-2.987.06-4.042c.05-1.03.22-1.62.4-2.075.22-.52.57-1.05 1.01-1.48.43-.43.96-.79 1.48-1.01.455-.18 1.045-.35 2.075-.4C9.013 3.01 9.33 3 12 3zm0 2.7c-3.454 0-6.25 2.796-6.25 6.25s2.796 6.25 6.25 6.25 6.25-2.796 6.25-6.25-2.796-6.25-6.25-6.25zm0 10.7c-2.46 0-4.45-1.99-4.45-4.45s1.99-4.45 4.45-4.45 4.45 1.99 4.45 4.45-1.99 4.45-4.45 4.45zm5.85-11.4c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25z"></path></svg>
-                    </a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"></path></svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 7.306c-.23-.834-.89-1.493-1.724-1.724C18.31 5 12 5 12 5s-6.31 0-7.858.582c-.834.23-1.494.89-1.724 1.724C2 8.854 2 12 2 12s0 3.146.418 4.694c.23.834.89 1.493 1.724 1.724C5.69 19 12 19 12 19s6.31 0 7.858-.582c.834-.23 1.494-.89 1.724-1.724C22 15.146 22 12 22 12s0-3.146-.418-4.694zM9.546 14.552V9.448L14.734 12z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2.717 0-3.056.01-4.122.06-1.065.05-1.79.22-2.428.46-.66.25-1.217.59-1.777 1.15-.56.56- .9 1.117-1.15 1.777-.24 1.065-.41 1.79-.46 2.428-.05 1.066-.06 1.405-.06 4.122s.01 3.056.06 4.122c.05 1.065.22 1.79.46 2.428.25.66.59 1.217 1.15 1.777.56.56 1.117.9 1.777 1.15.638.24 1.363.41 2.428.46 1.066.05 1.405.06 4.122.06s3.056-.01 4.122-.06c1.065-.05 1.79-.22 2.428-.46.66-.25 1.217-.59 1.777-1.15.56-.56.9-1.117 1.15-1.777.24-1.065.41-1.79.46-2.428.05-1.066.06-1.405.06-4.122s-.01-3.056-.06-4.122c-.05-1.065-.22-1.79-.46-2.428a5.525 5.525 0 0 0-1.15-1.777 5.525 5.525 0 0 0-1.777-1.15c-.638-.24-1.363-.41-2.428-.46C15.056 2.01 14.717 2 12 2zm0 1.8c2.67 0 2.987.01 4.042.06 1.03.05 1.62.22 2.075.4.52.22 1.05.57 1.48 1.01.43.43.79.96 1.01 1.48.18.455.35 1.045.4 2.075.05 1.055.06 1.372.06 4.042s-.01 2.987-.06 4.042c-.05 1.03-.22 1.62-.4 2.075a3.633 3.633 0 0 1-1.01 1.48 3.633 3.633 0 0 1-1.48 1.01c-.455.18-1.045.35-2.075.4-1.055.05-1.372.06-4.042.06s-2.987-.01-4.042-.06c-1.03-.05-1.62-.22-2.075-.4a3.633 3.633 0 0 1-1.48-1.01 3.633 3.633 0 0 1-1.01-1.48c-.18-.455-.35-1.045-.4-2.075C3.01 15.057 3 14.74 3 12s.01-2.987.06-4.042c.05-1.03.22-1.62.4-2.075.22-.52.57-1.05 1.01-1.48.43-.43.96-.79 1.48-1.01.455-.18 1.045-.35 2.075-.4C9.013 3.01 9.33 3 12 3zm0 2.7c-3.454 0-6.25 2.796-6.25 6.25s2.796 6.25 6.25 6.25 6.25-2.796 6.25-6.25-2.796-6.25-6.25-6.25zm0 10.7c-2.46 0-4.45-1.99-4.45-4.45s1.99-4.45 4.45-4.45 4.45 1.99 4.45 4.45-1.99 4.45-4.45-4.45zm5.85-11.4c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25z"></path></svg></a>
                 </div>
             </div>
         </footer>
-        </div>
 
-    <script src="app.js"></script>
     </div>
 
-    <script src="app.js"></script>
+    <script src="abarth_app.js"></script>
 </body>
 </html>
