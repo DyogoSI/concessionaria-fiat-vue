@@ -61,12 +61,41 @@ body {
     gap: clamp(15px, 4vw, 30px);
 }
 
-.navbar a {
+.navbar ul a {
     color: var(--cor-branco);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 300;
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-right: 15px;
+}
+
+/* Cria o elemento da seta depois (::after) do texto do link */
+.navbar ul a::after {
+    content: '›'; /* Este é o caractere da seta. Parece melhor que ">" */
+    font-size: 1.4rem; /* Tamanho da seta */
+    position: absolute;
+    top: 50%; /* Alinha verticalmente no meio */
+    right: 0; /* Começa na borda direita do padding */
+    transform: translateY(-50%); /* Ajuste fino para centralização vertical perfeita */
+    
+    /* Estado inicial da animação: invisível e um pouco para a esquerda */
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* O que acontece quando passamos o mouse por cima do link (a:hover) */
+.navbar ul a:hover::after {
+    /* Estado final da animação: visível e um pouco para a direita */
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Bônus: Aumenta o espaço quando a seta aparece, para o texto não pular */
+.navbar ul a:hover {
+    padding-right: 25px;
 }
 
 .navbar a:hover {
