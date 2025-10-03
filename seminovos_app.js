@@ -91,7 +91,19 @@ createApp({
                     preco: 'R$ 110.850,00',
                     imagem: 'https://production.autoforce.com/uploads/version/profile_image/6764/comprar-drive-1-3-automatico_c89582d8f5.png',
                     descricao: 'Praticamente zero km! Este Pulse Drive 1.3 Automático 2024 é a escolha perfeita para quem quer o conforto e a tecnologia de um SUV moderno sem o preço de um novo.'
+                },
+
+                {
+                    id: 8,
+                    nome: 'Fiat Argo HGT 1.8 AT',
+                    ano: 2018,
+                    quilometragem: '35.000',
+                    cor: 'Azul',
+                    preco: 'R$ 85.990,00',
+                    imagem: 'https://revistacarro.com.br/wp-content/uploads/2018/05/hgt_at.png',
+                    descricao: 'A versão esportiva do Argo, o HGT vem com motor 1.8 e câmbio automático. Detalhes exclusivos no design e um interior que respira esportividade.'
                 }
+                
             ],
             // O resto do código (lógica de busca e seleção) permanece o mesmo
             termoBusca: '',

@@ -8,20 +8,25 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="navbar-container">
-
             <a href="index.html" class="navbar-logo">
-            <img src="icons/logo fiat.svg" alt="Logo Fiat - Início" class="navbar-logo">
-            <ul>
-                <li><a href="index.html">VITRINE</a></li>
-                <li><a href="seminovos.html">SEMI NOVOS</a></li>
-                <li><a href="abarth.html">ABARTH</a></li>
-            </ul>
+                <img src="icons/logo fiat.svg" alt="Logo Fiat - Início" class="navbar-logo">
+            </a>
+            <div class="navbar-location">
+                <img src="icons/location-icon.svg" alt="Localização">
+                <span>Machado, MG</span>
+            </div>
+            <div class="navbar-right">
+                <ul id="nav-links">
+                    <li><a href="index.html">VITRINE</a></li>
+                    <li><a href="seminovos.html">SEMI NOVOS</a></li>
+                    <li><a href="abarth.html">ABARTH</a></li>
+                </ul>
+                <img src="icons/menu-icon.svg" alt="Menu" class="menu-icon" id="menu-icon">
+            </div>
         </div>
     </nav>
-
     <div id="app">
         <header>
             <div class="main-title-container">
@@ -29,12 +34,10 @@
                 <h1>Nosso Estoque de Seminovos</h1>
             </div>
         </header>
-
         <main>
             <div class="busca-container">
                 <input type="text" v-model="termoBusca" placeholder="Buscar por nome...">
             </div>
-
             <section class="vitrine">
                 <div v-for="carro in carrosFiltrados" :key="carro.id" class="carro-card" @click="selecionarCarro(carro)">
                     <img :src="carro.imagem" :alt="carro.nome">
@@ -44,7 +47,6 @@
                     <p class="preco">{{ carro.preco }}</p>
                 </div>
             </section>
-
             <div v-if="carroSelecionado" class="detalhe-overlay" @click.self="fecharDetalhes">
                 <div class="detalhe-card">
                     <button @click="fecharDetalhes" class="fechar-btn">X</button>
@@ -57,7 +59,6 @@
                 </div>
             </div>
         </main>
-
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-main">
@@ -120,9 +121,19 @@
                 </div>
             </div>
         </footer>
-
     </div>
-
     <script src="seminovos_app.js"></script>
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuIcon.src = 'icons/close-icon.svg';
+            } else {
+                menuIcon.src = 'icons/menu-icon.svg';
+            }
+        });
+    </script>
 </body>
 </html>

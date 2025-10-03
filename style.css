@@ -38,6 +38,8 @@ body {
     padding-block: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     margin-bottom: clamp(20px, 5vw, 40px);
+    position: relative;
+    z-index: 100;
 }
 
 .navbar-container {
@@ -51,6 +53,28 @@ body {
 
 .navbar-logo {
     width: clamp(80px, 15vw, 100px);
+    flex-shrink: 0;
+}
+
+.navbar-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-branco);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    white-space: nowrap;
+    margin: 0 20px;
+}
+
+.navbar-location img {
+    width: 18px;
+    height: 18px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 4vw, 30px);
 }
 
 .navbar ul {
@@ -72,28 +96,22 @@ body {
     padding-right: 15px;
 }
 
-/* Cria o elemento da seta depois (::after) do texto do link */
 .navbar ul a::after {
-    content: '›'; /* Este é o caractere da seta. Parece melhor que ">" */
-    font-size: 1.4rem; /* Tamanho da seta */
+    content: '›'; 
+    font-size: 1.4rem; 
     position: absolute;
-    top: 50%; /* Alinha verticalmente no meio */
-    right: 0; /* Começa na borda direita do padding */
-    transform: translateY(-50%); /* Ajuste fino para centralização vertical perfeita */
-    
-    /* Estado inicial da animação: invisível e um pouco para a esquerda */
+    top: 50%; 
+    right: 0; 
+    transform: translateY(-50%); 
     opacity: 0;
     transition: all 0.3s ease;
 }
 
-/* O que acontece quando passamos o mouse por cima do link (a:hover) */
 .navbar ul a:hover::after {
-    /* Estado final da animação: visível e um pouco para a direita */
     opacity: 1;
     transform: translateY(-50%) translateX(5px);
 }
 
-/* Bônus: Aumenta o espaço quando a seta aparece, para o texto não pular */
 .navbar ul a:hover {
     padding-right: 25px;
 }
@@ -378,4 +396,50 @@ header h1 {
 .footer-social a:hover {
     color: var(--cor-principal);
     transform: scale(1.1);
+}
+
+/* --- Ícone de Menu (SVG) --- */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    z-index: 100;
+}
+
+/* --- Responsividade da Navbar --- */
+@media (max-width: 768px) {
+    .navbar-location,
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar ul.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--cor-preto);
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    }
+    
+    .navbar ul li {
+        padding: 10px 0;
+    }
+
+    .navbar ul a:hover {
+        padding-right: 15px;
+    }
+
+    .navbar ul a:hover::after {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }

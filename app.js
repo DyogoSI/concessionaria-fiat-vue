@@ -60,7 +60,7 @@ createApp({
                     id: 7,
                     nome: 'Fiat Fiorino',
                     ano: 2026,
-                    preco: 'R$ 121.990,00',
+                    preco: 'R$ 107.940,00',
                     imagem: 'https://next-files-bucket.s3.us-east-1.amazonaws.com/template/9/site/96/modules/sub_modules/238/independent/570ab04dee84b75b2c441718044736.png',
                     descricao: 'A parceira que o seu negócio precisa. A Fiat Fiorino é sinônimo de agilidade e economia para o transporte de cargas na cidade. Com compartimento de 3.3m³ e capacidade para 650 kg, ela está pronta para qualquer entrega.'
                 },
@@ -86,9 +86,18 @@ createApp({
                     id: 10,
                     nome: 'Fiat Ducato',
                     ano: 2026,
-                    preco: '269.990,00',
+                    preco: 'R$ 256.950,00',
                     imagem: 'https://next-files-bucket.s3.us-east-1.amazonaws.com/template/9/site/96/modules/sub_modules/238/independent/566cbeb769af96280d1d1751566956.png',
                     descricao: 'A ferramenta definitiva para o seu negócio. A Fiat Ducato Maxi Cargo é projetada para maximizar sua produtividade, com um compartimento de carga gigante de 13m³, agilidade e um motor Turbo Diesel potente e econômico.'
+                },
+
+                {
+                    id: 11,
+                    nome: 'Fiat FASTBACK IMPETUS TURBO 200 HYBRID FLEX AT ',
+                    ano: 2026,
+                    preco: 'R$ 138.900,00',
+                    imagem: 'https://ofertas.fiat.com.br/content/dam/fiat/products/376/al4/1/2026/page/hero-webp/hero-743.webp',
+                    descricao: 'A versão topo de gama com o motor T200 Hybrid. O SUV Coupé com melhorias no acabamento, design renovado e a eficiência da tecnologia híbrida para o máximo em performance e economia.'
                 }
 
 
