@@ -1,6 +1,22 @@
 /* ======================================================= */
 /* ESTILOS GERAIS E VARIÁVEIS                              */
 /* ======================================================= */
+
+/* --- CORREÇÃO DEFINITIVA PARA OVERFLOW --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+/* --- FIM DA CORREÇÃO --- */
+
+
 :root {
     --cor-principal: #c72a2a; /* Vermelho Fiat */
     --cor-texto: #333;
@@ -50,6 +66,13 @@ body {
     align-items: center;
 }
 
+/* NOVO CSS PARA O GRUPO DA ESQUERDA */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
 .navbar-logo {
     width: clamp(80px, 15vw, 100px);
     flex-shrink: 0;
@@ -62,7 +85,6 @@ body {
     color: var(--cor-branco);
     font-size: clamp(0.8rem, 2vw, 0.9rem);
     white-space: nowrap;
-    margin: 0 20px;
 }
 
 .navbar-location img {
@@ -152,8 +174,6 @@ body {
     margin-right: auto;
     padding-inline: var(--padding-container);
     width: 100%;
-    box-sizing: border-box;
-    /* Move o grupo para cima */
     margin-top: -120px;
     position: relative;
     z-index: 3;
@@ -507,9 +527,90 @@ header h1 {
         display: block;
     }
 
-    /* Ajuste responsivo para os banners sobrepostos */
     .banner-group {
         flex-direction: column;
-        margin-top: -100px;
+        margin-top: 30px; 
+    }
+}
+
+/* ======================================================= */
+/* ESTILOS DOS BOTÕES NOS CARDS                            */
+/* ======================================================= */
+.info-extra {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-buttons {
+    margin-top: auto; 
+    padding-top: 15px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-quero {
+    background-color: #e5202b; 
+}
+
+.btn-whatsapp {
+    background-color: #34a853;
+}
+
+.btn-whatsapp svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+/* ======================================================= */
+/* ESTILO DO BOTÃO DE LOGIN NA NAVBAR                      */
+/* ======================================================= */
+
+.navbar-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    margin-left: auto; /* EMPURRA O BOTÃO PARA A DIREITA */
+}
+
+.navbar-login:hover {
+    color: #ccc;
+}
+
+.navbar-login svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5;
+}
+
+/* Esconde o texto do botão de login em telas menores */
+@media (max-width: 768px) {
+    .navbar-login span {
+        display: none;
     }
 }
