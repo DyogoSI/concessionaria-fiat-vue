@@ -37,7 +37,6 @@ body {
     background-color: var(--cor-preto);
     padding-block: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin-bottom: clamp(20px, 5vw, 40px);
     position: relative;
     z-index: 100;
 }
@@ -97,12 +96,12 @@ body {
 }
 
 .navbar ul a::after {
-    content: '›'; 
-    font-size: 1.4rem; 
+    content: '›';
+    font-size: 1.4rem;
     position: absolute;
-    top: 50%; 
-    right: 0; 
-    transform: translateY(-50%); 
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     opacity: 0;
     transition: all 0.3s ease;
 }
@@ -120,6 +119,74 @@ body {
     color: #ccc;
 }
 
+/* --- Banner Principal (Hero) --- */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-banner-link {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 8%;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+/* --- Grupo de Banners (sobreposto) --- */
+.banner-group {
+    display: flex;
+    gap: clamp(15px, 3vw, 30px);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: var(--padding-container);
+    width: 100%;
+    box-sizing: border-box;
+    /* Move o grupo para cima */
+    margin-top: -120px;
+    position: relative;
+    z-index: 3;
+}
+
+/* --- Banner Promocional (item flex) --- */
+.promo-banner {
+    position: relative;
+    line-height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    flex: 1;
+    min-width: 0;
+}
+
+.promo-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.promo-banner-link {
+    position: absolute;
+    bottom: 8%;
+    left: 4%;
+    width: 30%;
+    height: 18%;
+    display: block;
+    z-index: 2;
+}
+
+
 /* --- Título Principal com Imagem (Página Fiat) --- */
 .main-title-container {
     display: flex;
@@ -127,6 +194,7 @@ body {
     justify-content: center;
     gap: clamp(10px, 2vw, 20px);
     margin-bottom: clamp(20px, 4vw, 30px);
+    margin-top: clamp(20px, 5vw, 40px);
 }
 
 .title-logo {
@@ -139,6 +207,7 @@ header h1 {
     text-align: center;
     margin: 0;
 }
+
 
 /* --- Busca --- */
 .busca-container {
@@ -201,7 +270,6 @@ header h1 {
     margin-top: auto;
 }
 
-/* --- Popup de Detalhes --- */
 .detalhe-overlay {
     position: fixed;
     inset: 0;
@@ -271,7 +339,6 @@ header h1 {
     opacity: 0.85;
 }
 
-/* --- Banner Abarth (Imagem Única) --- */
 .banner-container-imagem {
     position: relative;
     margin-bottom: clamp(30px, 6vw, 50px);
@@ -293,7 +360,6 @@ header h1 {
     display: block;
 }
 
-/* --- Rodapé (Footer) --- */
 .footer {
     color: #555;
     padding: clamp(40px, 8vw, 60px) var(--padding-container) 20px;
@@ -398,7 +464,6 @@ header h1 {
     transform: scale(1.1);
 }
 
-/* --- Ícone de Menu (SVG) --- */
 .menu-icon {
     display: none;
     cursor: pointer;
@@ -407,7 +472,6 @@ header h1 {
     z-index: 100;
 }
 
-/* --- Responsividade da Navbar --- */
 @media (max-width: 768px) {
     .navbar-location,
     .navbar ul {
@@ -441,5 +505,11 @@ header h1 {
 
     .menu-icon {
         display: block;
+    }
+
+    /* Ajuste responsivo para os banners sobrepostos */
+    .banner-group {
+        flex-direction: column;
+        margin-top: -100px;
     }
 }

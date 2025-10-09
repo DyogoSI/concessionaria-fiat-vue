@@ -8,29 +8,43 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-container">
-        <a href="index.html" class="navbar-logo">
-            <img src="icons/logo fiat.svg" alt="Logo Fiat - Início" class="navbar-logo">
-        </a>
-        
-        <div class="navbar-location">
-            <img src="icons/location-icon.svg" alt="Localização">
-            <span>Machado, MG</span>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="icons/logo fiat.svg" alt="Logo Fiat - Início" class="navbar-logo">
+            </a>
+            <div class="navbar-location">
+                <img src="icons/location-icon.svg" alt="Localização">
+                <span>Machado, MG</span>
+            </div>
+            <div class="navbar-right">
+                <ul id="nav-links">
+                    <li><a href="index.html">VITRINE</a></li>
+                    <li><a href="seminovos.html">SEMI NOVOS</a></li>
+                    <li><a href="abarth.html">ABARTH</a></li> 
+                </ul>
+                <img src="icons/menu-icon.svg" alt="Menu" class="menu-icon" id="menu-icon">
+            </div>
         </div>
+    </nav>
 
-        <div class="navbar-right">
-            <ul id="nav-links">
-                <li><a href="index.html">VITRINE</a></li>
-                <li><a href="seminovos.html">SEMI NOVOS</a></li>
-                <li><a href="abarth.html">ABARTH</a></li> 
-            </ul>
-            <img src="icons/menu-icon.svg" alt="Menu" class="menu-icon" id="menu-icon">
-        </div>
-    </div>
-</nav>
+    <section class="hero-banner">
+        <img src="https://www.fiat.com.br/content/dam/fiat/toro-my25/header_home_toro_my26_desk.webp" alt="Banner Nova Fiat Toro">
+        <a href="#" class="hero-banner-link" aria-label="Conheça a Nova Fiat Toro"></a>
+    </section>
 
     <div id="app">
+        <div class="banner-group">
+            <section class="promo-banner">
+                <img src="https://www.fiat.com.br/content/dam/fiat/fastback-fiat-my26/mini-banner-home/minibanner_home_fastbackMY26.webp" alt="Banner Novo Fiat Fastback">
+                <a href="#" class="promo-banner-link" aria-label="Saiba mais sobre o Novo Fiat Fastback"></a>
+            </section>
+            <section class="promo-banner">
+                <img src="https://www.fiat.com.br/content/dam/fiat/nova-home/teste2/minibanner_destaque_home_connectme.webp" alt="Banner Fiat Connect Me">
+                <a href="#" class="promo-banner-link" aria-label="Saiba mais sobre o Fiat Connect Me"></a>
+            </section>
+        </div>
+        
         <header>
             <div class="main-title-container">
                 <img src="icons/flag-red.webp" alt="Logo Fiat Vermelho" class="title-logo">
@@ -116,7 +130,7 @@
                     </div>
                 </div>
                 <div class="footer-legal">
-                    <p>&copy; 2025 Dyogo Henrique | WEB DEVELOPER</p>
+                  <p>&copy; 2025 Dyogo Henrique | WEB DEVELOPER</p>
                 </div>
                 <div class="footer-social">
                     <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
