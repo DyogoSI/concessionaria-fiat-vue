@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Concessionária Fiat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a href="index.html" class="navbar-logo">
+                    <img src="icons/logo fiat.svg" alt="Logo Fiat - Início" class="navbar-logo">
+                </a>
+            </div>
+            <div class="navbar-right">
+                <a href="index.html" class="back-to-home">Voltar para a Vitrine</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-page">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button id="show-login-btn" class="toggle-btn active">Entrar</button>
+                <button id="show-register-btn" class="toggle-btn">Criar Conta</button>
+            </div>
+
+            <form id="login-form" class="auth-form active">
+                <div class="form-title-container">
+                    <img src="icons/flag-red.webp" alt="Icone Fiat" class="form-title-icon">
+                    <h2>Acesse sua conta</h2>
+                </div>
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Entrar</button>
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </form>
+
+            <form id="register-form" class="auth-form">
+                <div class="form-title-container">
+                    <img src="icons/flag-red.webp" alt="Icone Fiat" class="form-title-icon">
+                    <h2>Crie sua conta</h2>
+                </div>
+                <div class="input-group">
+                    <label for="register-name">Nome Completo</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Crie uma Senha</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

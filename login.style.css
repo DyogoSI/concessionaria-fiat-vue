@@ -1,0 +1,133 @@
+/* ======================================================= */
+/* ESTILOS DA PÁGINA DE LOGIN                              */
+/* ======================================================= */
+
+.back-to-home {
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-weight: normal; /* Alterado para normal (ou 400) para uma fonte mais fina */
+    transition: color 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: #ccc;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* 100% da altura da tela menos a altura da navbar */
+    padding: 20px;
+    background-color: var(--cor-fundo);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--cor-branco);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #888;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-btn.active {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+/* --- ESTILOS PARA O TÍTULO COM ÍCONE --- */
+.form-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.form-title-icon {
+    width: 30px;
+    height: auto;
+}
+
+.auth-form h2 {
+    margin: 0; /* Remove a margem do h2, pois ela está no container */
+    color: var(--cor-texto);
+    font-size: 1.7rem;
+}
+/* --- FIM DOS ESTILOS DO TÍTULO --- */
+
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
