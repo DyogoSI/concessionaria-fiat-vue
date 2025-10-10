@@ -250,6 +250,7 @@ header h1 {
     gap: clamp(20px, 4vw, 30px);
 }
 
+/* ===== CORREÇÃO DA ANIMAÇÃO APLICADA AQUI ===== */
 .carro-card {
     background-color: var(--cor-branco);
     border: 1px solid #ddd;
@@ -258,16 +259,30 @@ header h1 {
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    /* Propriedades para a animação de entrada */
+    opacity: 0;
+    transform: translateY(30px);
+    
+    /* Transição unificada para todas as animações */
+    transition: opacity 0.6s ease-out, 
+                transform 0.4s ease-out, 
+                box-shadow 0.4s ease-out;
 }
 
-.carro-card:hover {
+.carro-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carro-card.is-visible:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
+/* ===== FIM DA CORREÇÃO ===== */
 
 .carro-card img {
     max-width: 100%;
@@ -489,7 +504,7 @@ header h1 {
 
 @media (max-width: 768px) {
     .navbar-left {
-        gap: 15px; /* Reduz o espaçamento no mobile */
+        gap: 15px; 
     }
     .navbar-location,
     .navbar ul {
@@ -611,17 +626,6 @@ header h1 {
 /* ======================================================= */
 /* ANIMAÇÕES                                               */
 /* ======================================================= */
-
-.carro-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.carro-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .detalhe-overlay {
     animation: fadeIn 0.3s ease-out forwards;
