@@ -1,0 +1,98 @@
+/* ======================================================= */
+/* ESTILOS ESPECÍFICOS DA PÁGINA ABARTH (TEMA ESCURO)      */
+/* ======================================================= */
+
+body.abarth-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.abarth-logo-container {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.abarth-logo-container img {
+    max-width: 250px;
+    height: auto;
+}
+
+.abarth-grafismo {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.abarth-theme #app {
+    color: #e0e0e0;
+}
+
+.abarth-theme header h1 {
+    color: #fff;
+}
+
+.abarth-theme .busca-container input {
+    background-color: #1c1c1e;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.abarth-theme .carro-card {
+    background-color: #1c1c1e;
+    border: 1px solid #333;
+}
+
+.abarth-theme .carro-card h2 {
+    color: #fff;
+}
+
+.abarth-theme .detalhe-card {
+    background-color: #1c1c1e;
+    border: 1px solid #333;
+    color: #e0e0e0;
+}
+
+.abarth-theme .fechar-btn {
+    background: #333;
+    color: #fff;
+}
+
+.abarth-theme .fechar-btn:hover {
+    background-color: #555;
+}
+
+
+/* ======================================================= */
+/* ESTILIZAÇÃO DO FOOTER PARA O TEMA ABARTH                */
+/* ======================================================= */
+
+.abarth-theme .footer {
+    color: #a0a0a0; /* Cor do texto geral do rodapé */
+    border-top: 1px solid #333; /* Linha superior mais escura */
+}
+
+.abarth-theme .link-column h4 {
+    color: #ffffff; /* Títulos das colunas em branco */
+}
+
+.abarth-theme .link-column a {
+    color: #a0a0a0; /* Links em cinza claro */
+}
+
+.abarth-theme .link-column a:hover {
+    color: var(--cor-principal); /* Links ficam vermelhos ao passar o mouse */
+}
+
+.abarth-theme .footer-legal {
+    color: #888; /* Texto de copyright mais sutil */
+    border-top: 1px solid #333; /* Linha acima do copyright mais escura */
+}
+
+.abarth-theme .footer-social a {
+    color: #a0a0a0; /* Ícones sociais em cinza claro */
+}
+
+.abarth-theme .footer-social a:hover {
+    color: var(--cor-principal); /* Ícones ficam vermelhos ao passar o mouse */
+}

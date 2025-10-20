@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concessionária Fiat | Abarth</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="abarth.style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body>
+<body class="abarth-theme">
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-left">
@@ -41,10 +42,16 @@
     </nav>
     <div id="app">
         <main>
+            <section class="abarth-logo-container">
+                <img src="https://www.fiat.com.br/content/dam/fiat/home-abarth/banners/logo-abarth.webp" alt="Logo Abarth">
+                <img src="https://www.fiat.com.br/content/dam/fiat/home-abarth/banners/grafismo.webp" alt="Grafismo Abarth" class="abarth-grafismo">
+            </section>
+
             <section class="banner-container-imagem">
                 <img src="https://www.fiat.com.br/content/dam/fiat/fastback-abarth-my26/02_destaque_home_abarth_desk.webp" alt="Banner Abarth com Pulse e Fastback">
                 <a href="#vitrine" class="cta-invisivel" aria-label="Saiba mais sobre os carros Abarth"></a>
             </section>
+            
             <div class="busca-container">
                 <input type="text" v-model="termoBusca" placeholder="Buscar por nome...">
             </div>
