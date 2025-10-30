@@ -1,10 +1,15 @@
 /* ======================================================= */
-/* ESTILOS ESPECÍFICOS DA PÁGINA ABARTH (TEMA ESCURO)      */
+/* ESTILOS ESPECÍFICOS DA PÁGINA ABARTH                    */
 /* ======================================================= */
 
 body.abarth-theme {
-    background-color: #121212;
+    background-color: #121212; 
     color: #e0e0e0;
+}
+
+.abarth-theme #app-content { /* ID Alterado no HTML */
+    padding-inline: var(--padding-container);
+    color: #e0e0e0; 
 }
 
 .abarth-logo-container {
@@ -24,42 +29,371 @@ body.abarth-theme {
     margin: 20px auto 0;
 }
 
-.abarth-theme #app {
-    color: #e0e0e0;
+/* ======================================================= */
+/* ESTILOS DOS CARDS DE DESTAQUE (FEATURES) ABARTH (TEMA ESCURO) */
+/* ======================================================= */
+
+.abarth-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px; 
 }
 
-.abarth-theme header h1 {
-    color: #fff;
-}
-
-.abarth-theme .busca-container input {
-    background-color: #1c1c1e;
+.feature-card {
+    background-color: #1c1c1e; 
+    border-radius: 8px;
+    overflow: hidden; 
     border: 1px solid #333;
-    color: #fff;
+    display: flex; 
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.abarth-theme .carro-card {
-    background-color: #1c1c1e;
-    border: 1px solid #333;
+.feature-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.abarth-theme .carro-card h2 {
-    color: #fff;
+.feature-card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.abarth-theme .detalhe-card {
-    background-color: #1c1c1e;
-    border: 1px solid #333;
-    color: #e0e0e0;
+.feature-description {
+    padding: 20px; 
+    font-size: 0.9rem;
+    color: #c0c0c0;
+    line-height: 1.5;
+    margin: 0; 
+    flex-grow: 1; 
 }
 
-.abarth-theme .fechar-btn {
-    background: #333;
-    color: #fff;
+/* ======================================================= */
+/* ESTILOS DO SELETOR DE MODELOS ABARTH (FUNDO BEGE)       */
+/* ======================================================= */
+
+.selector-wrapper-abarth {
+    background-color: #f0ebe5; 
+    margin-top: 50px; 
+    padding: 60px 0; 
+    width: 100vw; 
+    position: relative; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    overflow: hidden; 
 }
 
-.abarth-theme .fechar-btn:hover {
-    background-color: #555;
+.selector-wrapper-abarth::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20%; 
+    transform: translate(-50%, -50%);
+    width: 400px; 
+    height: 400px;
+    background-image: url('https://www.fiat.com.br/content/dam/fiat/home-abarth/bg-escorpiao.webp'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.08; 
+    z-index: 1;
+}
+
+.selector-wrapper-abarth::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 5%; 
+    bottom: 0;
+    width: 150px; 
+    background-image: url('https://www.fiat.com.br/content/dam/fiat/home-abarth/bg-linhas.webp'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    opacity: 0.2; 
+    z-index: 1;
+}
+
+.abarth-selector {
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding-inline: var(--padding-container); 
+    position: relative; 
+    z-index: 2;
+}
+
+.selector-header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcd3ca; 
+}
+
+.header-text h3 {
+    font-size: 1.1rem; 
+    color: var(--cor-principal);
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header-text p {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0;
+}
+
+.selector-tabs {
+    display: inline-flex; 
+    border: 1px solid var(--cor-preto); 
+    border-radius: 0; 
+    overflow: hidden; 
+}
+
+.selector-tabs button {
+    background: var(--cor-preto); 
+    border: none;
+    border-left: 1px solid #555; 
+    color: var(--cor-branco); 
+    padding: 6px 15px; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.75rem; 
+    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.selector-tabs button:first-child {
+    border-left: none; 
+}
+
+.selector-tabs button.active {
+    background-color: var(--cor-branco); 
+    color: var(--cor-preto);
+    border-color: var(--cor-preto); 
+}
+
+.selector-tabs button:not(.active):hover {
+    background-color: #333; 
+    color: var(--cor-branco);
+}
+
+.selector-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    min-height: 400px; 
+}
+
+.selector-image-container { 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-grow: 1; 
+     /* Adiciona position relative para a transição */
+     position: relative; 
+     height: 400px; /* Define altura fixa para a transição funcionar bem */
+}
+
+.selector-image {
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
+    /* Ajustes para a transição */
+    position: absolute; /* Permite sobreposição durante a transição */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.selector-footer { 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+    margin-top: 30px;
+    border-top: 1px solid #dcd3ca; 
+    padding-top: 20px;
+    position: relative; /* Para a transição */
+    min-height: 150px; /* Altura mínima para evitar colapso durante a transição */
+}
+
+.selector-details {
+    flex-basis: 60%; 
+    padding: 0; 
+    color: #555;
+}
+
+.selector-details h4 {
+    font-size: 1.3rem; 
+    color: var(--cor-principal); 
+    margin: 0 0 2px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.selector-details .tagline {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.car-specs {
+    display: flex;
+    gap: 20px; 
+    margin-top: 15px;
+    padding-left: 5px; 
+    border-left: 3px solid var(--cor-principal); 
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.spec-item strong {
+    font-size: 0.75rem;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.spec-item span {
+    font-size: 0.9rem;
+    color: var(--cor-preto);
+    font-weight: bold;
+}
+
+.selector-actions {
+    display: flex;
+    gap: 10px; 
+    flex-shrink: 0; 
+}
+
+.btn-detalhe {
+    padding: 8px 18px; 
+    border-radius: 0; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.75rem; 
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Adicionado transform e box-shadow */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-detalhe.monte {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-principal);
+}
+
+.btn-detalhe.monte:hover {
+    background-color: #a62323; 
+    border-color: #a62323;
+}
+
+.btn-detalhe.saiba {
+    background-color: var(--cor-preto); 
+    color: var(--cor-branco); 
+    border: 1px solid var(--cor-preto); 
+}
+
+.btn-detalhe.saiba:hover {
+    background-color: #333; 
+    border-color: #333;
+}
+
+.nav-arrow {
+    background: var(--cor-principal); 
+    border: none;
+    color: var(--cor-branco); 
+    font-size: 1.5rem; 
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; 
+    height: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    padding: 0; 
+    z-index: 3; 
+}
+
+.nav-arrow:hover {
+    background-color: #a62323; 
+    color: var(--cor-branco);
+}
+
+.nav-arrow.prev {
+    left: 10px; 
+    transform: translateY(-50%) scaleX(-1); 
+}
+
+.nav-arrow.next {
+    right: 10px; 
+}
+
+@media (max-width: 1250px) { 
+    .nav-arrow.prev { left: 5px; } 
+    .nav-arrow.next { right: 5px; } 
+}
+
+@media (max-width: 900px) { 
+    .selector-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+     .selector-content {
+        align-items: flex-start; 
+        min-height: 300px; /* Reduz altura mínima no mobile */
+    }
+     .selector-image-container {
+         height: 300px; /* Reduz altura no mobile */
+     }
+     .selector-footer {
+        flex-direction: column;
+        align-items: center; 
+        gap: 20px;
+    }
+    .selector-details {
+        flex-basis: auto; 
+        text-align: center;
+    }
+     .car-specs {
+         justify-content: center; 
+    }
+     .selector-actions {
+         justify-content: center;
+    }
+     .nav-arrow {
+         top: 40%; /* Ajusta posição da seta */
+    }
+}
+
+@media (max-width: 768px) {
+    .selector-wrapper-abarth {
+         padding: 30px 0;
+    }
+    .selector-details {
+        padding: 20px 0 0 0; 
+        max-width: 400px; 
+    }
+    .nav-arrow {
+         display: none;
+     }
 }
 
 
@@ -67,32 +401,75 @@ body.abarth-theme {
 /* ESTILIZAÇÃO DO FOOTER PARA O TEMA ABARTH                */
 /* ======================================================= */
 
-.abarth-theme .footer {
-    color: #a0a0a0; /* Cor do texto geral do rodapé */
-    border-top: 1px solid #333; /* Linha superior mais escura */
+.footer.abarth-theme-footer {
+    background-color: #121212; 
+    color: #a0a0a0; 
+    border-top: 1px solid #333; 
+    padding-inline: var(--padding-container); 
+    margin-top: 0;
 }
 
-.abarth-theme .link-column h4 {
-    color: #ffffff; /* Títulos das colunas em branco */
+.footer.abarth-theme-footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.abarth-theme .link-column a {
-    color: #a0a0a0; /* Links em cinza claro */
+.abarth-theme-footer .link-column h4 {
+    color: #ffffff; 
 }
 
-.abarth-theme .link-column a:hover {
-    color: var(--cor-principal); /* Links ficam vermelhos ao passar o mouse */
+.abarth-theme-footer .link-column a {
+    color: #a0a0a0; 
 }
 
-.abarth-theme .footer-legal {
-    color: #888; /* Texto de copyright mais sutil */
-    border-top: 1px solid #333; /* Linha acima do copyright mais escura */
+.abarth-theme-footer .link-column a:hover {
+    color: var(--cor-principal); 
 }
 
-.abarth-theme .footer-social a {
-    color: #a0a0a0; /* Ícones sociais em cinza claro */
+.abarth-theme-footer .footer-legal {
+    color: #888; 
+    border-top: 1px solid #333; 
 }
 
-.abarth-theme .footer-social a:hover {
-    color: var(--cor-principal); /* Ícones ficam vermelhos ao passar o mouse */
+.abarth-theme-footer .footer-social a {
+    color: #a0a0a0; 
+}
+
+.abarth-theme-footer .footer-social a:hover {
+    color: var(--cor-principal); 
+}
+
+/* ======================================================= */
+/* ANIMAÇÕES                                               */
+/* ======================================================= */
+
+/* Animação fade para o seletor */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+/* Animação subir para os feature cards */
+.feature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.feature-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito hover para botões */
+.btn:hover, /* Botões dos cards de carro (se houver) */
+.comprar-btn:hover, /* Botão no modal (se houver) */
+.btn-detalhe:hover { /* Botões Monte/Saiba */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }

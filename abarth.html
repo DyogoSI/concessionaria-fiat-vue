@@ -40,109 +40,148 @@
             </div>
         </div>
     </nav>
-    <div id="app">
+
+    <div id="app-content"> 
         <main>
             <section class="abarth-logo-container">
                 <img src="https://www.fiat.com.br/content/dam/fiat/home-abarth/banners/logo-abarth.webp" alt="Logo Abarth">
                 <img src="https://www.fiat.com.br/content/dam/fiat/home-abarth/banners/grafismo.webp" alt="Grafismo Abarth" class="abarth-grafismo">
             </section>
 
-            <section class="banner-container-imagem">
-                <img src="https://www.fiat.com.br/content/dam/fiat/fastback-abarth-my26/02_destaque_home_abarth_desk.webp" alt="Banner Abarth com Pulse e Fastback">
-                <a href="#vitrine" class="cta-invisivel" aria-label="Saiba mais sobre os carros Abarth"></a>
-            </section>
-            
-            <div class="busca-container">
-                <input type="text" v-model="termoBusca" placeholder="Buscar por nome...">
-            </div>
-            <section class="vitrine" id="vitrine">
-                <div v-for="carro in carrosFiltrados" :key="carro.id" class="carro-card" @click="selecionarCarro(carro)">
-                    <img :src="carro.imagem" :alt="carro.nome">
-                    <h2>{{ carro.nome }}</h2>
-                    <p class="preco">{{ carro.preco }}</p>
-                    <div class="card-buttons">
-                        <a href="#" class="btn btn-quero" @click.stop>EU QUERO</a>
-                        <a href="#" class="btn btn-whatsapp" @click.stop>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-38.2 0-73.7-11.8-103.6-32.5L38 488.2l32.5-84.3c-20.7-31.5-31.8-68.2-31.8-106.2 0-107.7 87.7-195.4 195.4-195.4 52.1 0 101.4 20.3 138.2 57.1 36.8 36.8 57.1 86.1 57.1 138.2-1.2 108.2-88.4 195.9-196.1 195.9zM319.4 309.4c-4.4-2.2-26.2-13-30.2-14.5-4-1.5-7-2.2-10 2.2s-11.4 14.5-14 17.4c-2.6 3-5.2 3.3-9.7 1.1-16.5-8.2-27.9-14.9-38.6-29.5-10.7-14.6-18.1-32.5 2.2-46.8 1.4-1 3-2.2 4.4-3.7s2.2-3 3.3-5.2c1.1-2.2.5-4.4-1.1-6.9-1.6-2.5-10-24.1-13.7-33-3.7-8.9-7.4-7.6-10-7.7-2.6-.1-5.2-.1-7.9-.1s-7 1.1-10.7 4.4c-3.7 3.3-14.5 14.1-14.5 34.4 0 20.4 14.8 40 16.9 42.8 2.1 2.8 29.1 44.5 71.1 62.6 10.1 4.3 18.2 6.9 24.4 8.9 9.7 3.2 18.2 2.8 25.1 1.7 7.9-1.2 26.2-10.8 29.9-21.3 3.7-10.5 3.7-19.5 2.6-21.3-1.1-1.8-4.4-3.3-9.7-5.5z"/></svg>
-                            NEGOCIE POR WHATSAPP
-                        </a>
-                    </div>
+            <section class="abarth-features">
+                 <div class="feature-card">
+                    <img src="icons/card 1.png" alt="Performance Abarth">
+                    <p class="feature-description">Dirija com agilidade e tenha respostas rápidas com o Motor Abarth Turbo feito no Brasil. São 185 cv de potência e torque de 270 Nm que garantem máxima eficiência e performance.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="icons/card 2.png" alt="Direção Provocante Abarth">
+                    <p class="feature-description">Ama velocidade? Selecione o modo de condução Poison para uma direção mais provocante e sinta na pele a experiência de dirigir um carro que vai de 0 a 100 em apenas 7,6 segundos.</p>
+                </div>
+                 <div class="feature-card">
+                    <img src="icons/card 3.png" alt="Tecnologia e Inovação Abarth">
+                    <p class="feature-description">Com Abarth, você aproveita o melhor em comodidades como carregador sem fio, ar-condicionado e cluster full digital, central multimídia 10.1” e Keyless Enter N’Go, que permite abrir e fechar as portas com apenas um toque.</p>
+                </div>
+                 <div class="feature-card">
+                    <img src="icons/card 4.png" alt="Feito Sob Medida Abarth">
+                    <p class="feature-description">Um Abarth com a sua cara. Novos bancos esportivos em couro, com abas laterais, apoio de braço, costuras aparentes e teto solar panorâmico. Você ainda pode personalizar seu carro com acessórios que elevam ainda mais o estilo do seu esportivo.</p>
+                </div>
+                 <div class="feature-card">
+                    <img src="icons/card 5.png" alt="Legado Abarth">
+                    <p class="feature-description">A longa tradição da Abarth em preparação, vitórias e recordes em corridas é a base de forte reputação da marca. Garanta mais do que um carro – tenha consigo uma herança histórica em eficiência, qualidade e principalmente, velocidade.</p>
+                </div>
+                 <div class="feature-card">
+                    <img src="icons/card 6.png" alt="Legião de Apaixonados Abarth">
+                    <p class="feature-description">Só Abarth é um Abarth. Faça parte da fiel legião de fãs espalhados por todo o mundo que compartilham da mesma visão e mantêm a marca viva e desejada.</p>
                 </div>
             </section>
-            <div v-if="carroSelecionado" class="detalhe-overlay" @click.self="fecharDetalhes">
-                <div class="detalhe-card">
-                    <button @click="fecharDetalhes" class="fechar-btn">X</button>
-                    <img :src="carroSelecionado.imagem" :alt="carroSelecionado.nome">
-                    <h2>{{ carroSelecionado.nome }}</h2>
-                    <p>{{ carroSelecionado.descricao }}</p>
-                    <p class="preco">{{ carroSelecionado.preco }}</p>
-                    <a href="#" class="comprar-btn">Tenho Interesse</a>
-                </div>
-            </div>
         </main>
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-main">
-                    <div class="footer-logo">
-                        <img src="icons/logo_footer_hub_fiat.svg" alt="Logo Fiat">
-                    </div>
-                    <div class="footer-links">
-                        <div class="link-column">
-                            <h4>Carros</h4>
-                            <ul>
-                                <li><a href="#">Fiat Professional</a></li>
-                                <li><a href="abarth.html">Conheça Abarth</a></li>
-                                <li><a href="#">Institucional</a></li>
-                                <li><a href="#">Fiat Connect////Me</a></li>
-                                <li><a href="#">Política de Qualidade</a></li>
-                            </ul>
-                        </div>
-                        <div class="link-column">
-                            <h4>Ofertas Fiat</h4>
-                            <ul>
-                                <li><a href="#">Vendas Diretas</a></li>
-                                <li><a href="#">Serviços Financeiros</a></li>
-                                <li><a href="#">Fale com a Fiat</a></li>
-                                <li><a href="#">Fiat Comunità</a></li>
-                                <li><a href="#">Política de Privacidade</a></li>
-                                <li><a href="#">Promoção Fiat e LollaBR</a></li>
-                            </ul>
-                        </div>
-                        <div class="link-column">
-                            <h4>Programa Acesse Fiat</h4>
-                            <ul>
-                                <li><a href="seminovos.html">Fiat Seminovos</a></li>
-                                <li><a href="#">Todos os Serviços</a></li>
-                                <li><a href="#">Reparador Fiat</a></li>
-                                <li><a href="#">Comunicado de Fraude</a></li>
-                            </ul>
-                        </div>
-                        <div class="link-column">
-                            <h4>Serviços Fiat</h4>
-                            <ul>
-                                <li><a href="#">Manuais</a></li>
-                                <li><a href="#">Concessionárias</a></li>
-                                <li><a href="#">Fiat Lovers</a></li>
-                                <li><a href="#">Giro Fiat</a></li>
-                                <li><a href="#">Fishwear</a></li>
-                                <li><a href="#">Proconve – Ruído e Opacidade</a></li>
-                                <li><a href="#">Mais sites</a></li>
-                            </ul>
-                        </div>
-                    </div>
+    </div> <div class="selector-wrapper-abarth">
+        <section class="abarth-selector" id="modelos-abarth"> 
+            <div class="selector-header">
+                <div class="header-text">
+                     <h3>MODELOS ABARTH</h3>
+                     <p>O puro DNA de um carro esportivo de verdade</p>
                 </div>
-                <div class="footer-legal">
-                    <p>&copy; 2025 Dyogo Henrique | WEB DEVELOPER</p>
-                </div>
-                <div class="footer-social">
-                    <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+                <div class="selector-tabs">
+                    <button @click="selecionarModelo(0)" :class="{ active: indiceSelecionado === 0 }">PULSE ABARTH</button>
+                    <button @click="selecionarModelo(1)" :class="{ active: indiceSelecionado === 1 }">FASTBACK ABARTH</button>
                 </div>
             </div>
-        </footer>
+
+            <div class="selector-content">
+                <div class="selector-image-container">
+                     <transition name="fade" mode="out-in">
+                        <img :src="modeloSelecionado.imagem" :alt="modeloSelecionado.nome" class="selector-image" :key="modeloSelecionado.id">
+                     </transition>
+                </div>
+                 <button class="nav-arrow prev" @click="modeloAnterior">&#x203A;</button>
+                 <button class="nav-arrow next" @click="proximoModelo">&#x203A;</button>
+            </div>
+             
+             <transition name="fade" mode="out-in">
+                 <div class="selector-footer" :key="modeloSelecionado.id">
+                     <div class="selector-details">
+                         <h4>{{ modeloSelecionado.nome }}</h4>
+                          <p class="tagline">{{ modeloSelecionado.tagline }}</p>
+                          <div class="car-specs">
+                               <div class="spec-item" v-for="spec in modeloSelecionado.specs">
+                                    <strong>{{ spec.label }}</strong>
+                                    <span>{{ spec.value }}</span>
+                               </div>
+                          </div>
+                     </div>
+                     <div class="selector-actions">
+                         <a href="#" class="btn-detalhe monte">Monte o Seu</a>
+                         <a href="#" class="btn-detalhe saiba">Saiba Mais</a>
+                     </div>
+                 </div>
+            </transition>
+        </section>
     </div>
-    <script src="abarth_app.js"></script>
+    <footer class="footer abarth-theme-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="icons/logo_footer_hub_fiat.svg" alt="Logo Fiat">
+                </div>
+                <div class="footer-links">
+                     <div class="link-column">
+                        <h4>Carros</h4>
+                        <ul>
+                            <li><a href="#">Fiat Professional</a></li>
+                            <li><a href="abarth.html">Conheça Abarth</a></li>
+                            <li><a href="#">Institucional</a></li>
+                            <li><a href="#">Fiat Connect////Me</a></li>
+                            <li><a href="#">Política de Qualidade</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Ofertas Fiat</h4>
+                        <ul>
+                            <li><a href="#">Vendas Diretas</a></li>
+                            <li><a href="#">Serviços Financeiros</a></li>
+                            <li><a href="#">Fale com a Fiat</a></li>
+                            <li><a href="#">Fiat Comunità</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Promoção Fiat e LollaBR</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Programa Acesse Fiat</h4>
+                        <ul>
+                            <li><a href="seminovos.html">Fiat Seminovos</a></li>
+                            <li><a href="#">Todos os Serviços</a></li>
+                            <li><a href="#">Reparador Fiat</a></li>
+                            <li><a href="#">Comunicado de Fraude</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Serviços Fiat</h4>
+                        <ul>
+                            <li><a href="#">Manuais</a></li>
+                            <li><a href="#">Concessionárias</a></li>
+                            <li><a href="#">Fiat Lovers</a></li>
+                            <li><a href="#">Giro Fiat</a></li>
+                            <li><a href="#">Fishwear</a></li>
+                            <li><a href="#">Proconve – Ruído e Opacidade</a></li>
+                            <li><a href="#">Mais sites</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 Dyogo Henrique | WEB DEVELOPER</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="abarth_app.js"></script> 
     <script>
+        // Script do menu mobile
         const menuIcon = document.getElementById('menu-icon');
         const navLinks = document.getElementById('nav-links');
         menuIcon.addEventListener('click', () => {
@@ -153,9 +192,9 @@
                 menuIcon.src = 'icons/menu-icon.svg';
             }
         });
-    </script>
-    <script>
-        const cards = document.querySelectorAll('.carro-card');
+
+        // Script para animar cards de features
+        const cardsToAnimate = document.querySelectorAll('.feature-card'); 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -165,7 +204,7 @@
         }, {
             threshold: 0.1
         });
-        cards.forEach(card => {
+        cardsToAnimate.forEach(card => {
             observer.observe(card);
         });
     </script>
